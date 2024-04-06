@@ -14,9 +14,23 @@ func (p Player) Attack(enemyHP int) {
 }
 
 func main() {
-    player := Player{
-		hp: 100,
-	}
+    fmt.Println("Welcome to the dungeon of Supremium!")
+    fmt.Println("Press Enter to begin!")
+    fmt.Scanln()
+    var see int
 
-	fmt.Println(player.hp)
+    while true {
+        see = rand.Intn(2)
+        if player.hp <= 0 {
+            break
+        } else {
+            if see == 0 {
+                fmt.Println("You see nothing, press Enter to continue")
+                fmt.Scanln()
+            } else {
+                // TODO: insert code
+            }
+        }
+
+    }
 }
