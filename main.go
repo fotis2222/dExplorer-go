@@ -9,8 +9,9 @@ type Player struct {
 	hp int
 }
 
-func (p Player) Attack(enemyHP int) {
-	p.hp -= rand.Intn(enemyHP + 1)
+func (p *Player) Attack(enemyHP int) {
+	damage := rand.Intn(enemyHP + 1)
+	p.hp -= damage
 }
 
 func main() {
@@ -26,6 +27,8 @@ func main() {
 	for {
 		see = rand.Intn(2)
 		if player.hp <= 0 {
+			fmt.Println("You have lost the game, press Enter to exit")
+			fmt.Scanln()
 			break
 		} else {
 			if see == 0 {
@@ -52,6 +55,5 @@ func main() {
 				}
 			}
 		}
-
 	}
 }
