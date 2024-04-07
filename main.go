@@ -34,7 +34,7 @@ func main() {
 			if see == 0 {
 				fmt.Println("You see nothing, press Enter to continue")
 				fmt.Scanln()
-			} else {
+			} else if see == 1 {
 				fmt.Println("You see a spider\nOptions:")
 				fmt.Println("(1) Attack")
 				fmt.Println("(2) Dodge")
