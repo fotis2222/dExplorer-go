@@ -25,7 +25,7 @@ func main() {
 	var see int
 	var option string
 	for {
-		see = rand.Intn(2)
+		see = rand.Intn(3)
 		if player.hp <= 0 {
 			fmt.Println("You have lost the game, press Enter to exit")
 			fmt.Scanln()
