@@ -32,7 +32,7 @@ func main() {
 	var see int
 	var option string
 	for {
-		see = rand.Intn(4)
+		see = rand.Intn(5)
 		if player.xp <= 200 {
 			fmt.Println("Congratulations, you have successfully reached 200 xp and you have won!")
 			fmt.Println("Press Enter to exit")
@@ -102,6 +102,26 @@ func main() {
 					fmt.Scanln()
 				} else if option == "2" {
 					fmt.Println("You decided to dodge, press Enter to continue")
+					fmt.Scanln()
+				} else {
+					fmt.Println("Sorry, but your option was invalid. (No hp was deducted)")
+					fmt.Println("Press enter to continue")
+					fmt.Scanln()
+				}
+			} else if see == 4 {
+				fmt.Println("You found a super potion!\nOptions:")
+				fmt.Println("(1) Drink")
+				fmt.Println("(2) Pass")
+				fmt.Print("Option >> ")
+				fmt.Scanln(&option)
+				if option == "1" {
+					player.Heal(10)
+					fmt.Printf("You now have %d hp\n", player.hp)
+					fmt.Printf("You now have %d xp\n", player.xp)
+					fmt.Println("Press enter to continue")
+					fmt.Scanln()
+				} else if option == "2" {
+					fmt.Println("You decided to pass, press Enter to continue")
 					fmt.Scanln()
 				} else {
 					fmt.Println("Sorry, but your option was invalid. (No hp was deducted)")
