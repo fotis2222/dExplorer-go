@@ -14,6 +14,11 @@ func (p *Player) Attack(enemyHP int) {
 	p.hp -= damage
 }
 
+func (p *Player) Heal(amount int) {
+	heal := rand.Intn(amount)
+	p.hp += heal
+}
+
 func main() {
 	player := Player{
 		hp: 100,
@@ -60,7 +65,7 @@ func main() {
 				fmt.Print("Option >> ")
 				fmt.Scanln(&option)
 				if option == "1" {
-					player.Attack(-5)
+					player.Heal(5)
 					fmt.Printf("You now have %d hp\n", player.hp)
 					fmt.Println("Press enter to continue")
 					fmt.Scanln()
