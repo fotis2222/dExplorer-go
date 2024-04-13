@@ -32,7 +32,7 @@ func main() {
 	var see int
 	var option string
 	for {
-		see = rand.Intn(5)
+		see = rand.Intn(6)
 		if player.hp <= 0 {
 			fmt.Println("You have lost the game, press Enter to exit")
 			fmt.Scanln()
@@ -115,6 +115,27 @@ func main() {
 					fmt.Scanln()
 				} else if option == "2" {
 					fmt.Println("You decided to pass, press Enter to continue")
+					fmt.Scanln()
+				} else {
+					fmt.Println("Sorry, but your option was invalid. (No hp was deducted)")
+					fmt.Println("Press enter to continue")
+					fmt.Scanln()
+				}
+			} else if see == 5 {
+				fmt.Println("You see an angry cat!\nOptions:")
+				fmt.Println("(1) Attack")
+				fmt.Println("(2) Dodge")
+				fmt.Print("Option >> ")
+				fmt.Scanln(&option)
+				if option == "1" {
+					player.Attack(15)
+					player.xp += 15
+					fmt.Printf("You now have %d hp\n", player.hp)
+					fmt.Printf("You now have %d xp\n", player.xp)
+					fmt.Println("Press enter to continue")
+					fmt.Scanln()
+				} else if option == "2" {
+					fmt.Println("You decided to dodge, press Enter to continue")
 					fmt.Scanln()
 				} else {
 					fmt.Println("Sorry, but your option was invalid. (No hp was deducted)")
