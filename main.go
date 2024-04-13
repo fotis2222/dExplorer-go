@@ -33,12 +33,6 @@ func main() {
 	var option string
 	for {
 		see = rand.Intn(5)
-		if player.xp >= 200 {
-			fmt.Println("Congratulations, you have successfully reached 200 xp and you have won!")
-			fmt.Println("Press Enter to exit")
-			fmt.Scanln()
-			break
-		}
 		if player.hp <= 0 {
 			fmt.Println("You have lost the game, press Enter to exit")
 			fmt.Scanln()
@@ -57,6 +51,7 @@ func main() {
 					player.Attack(5)
 					player.xp += 5
 					fmt.Printf("You now have %d hp\n", player.hp)
+					fmt.Printf("You now have %d xp\n", player.xp)
 					fmt.Println("Press enter to continue")
 					fmt.Scanln()
 				} else if option == "2" {
@@ -76,7 +71,6 @@ func main() {
 				if option == "1" {
 					player.Heal(5)
 					fmt.Printf("You now have %d hp\n", player.hp)
-					fmt.Printf("You now have %d xp\n", player.xp)
 					fmt.Println("Press enter to continue")
 					fmt.Scanln()
 				} else if option == "2" {
@@ -117,7 +111,6 @@ func main() {
 				if option == "1" {
 					player.Heal(10)
 					fmt.Printf("You now have %d hp\n", player.hp)
-					fmt.Printf("You now have %d xp\n", player.xp)
 					fmt.Println("Press enter to continue")
 					fmt.Scanln()
 				} else if option == "2" {
