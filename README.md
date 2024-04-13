@@ -5,6 +5,6 @@ This game is about exploring a dungeon!
 This game requires a [go](https://go.dev/doc/install) installation.    
 Next, clone the repo and run the following command:    
 `
-go mod run
+go run .
 `
 
