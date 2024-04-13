@@ -33,13 +33,13 @@ func main() {
 	var option string
 	for {
 		see = rand.Intn(5)
-		if player.xp <= 200 {
+		if player.xp >= 200 {
 			fmt.Println("Congratulations, you have successfully reached 200 xp and you have won!")
 			fmt.Println("Press Enter to exit")
 			fmt.Scanln()
 			break
 		}
-		if player.hp >= 0 {
+		if player.hp <= 0 {
 			fmt.Println("You have lost the game, press Enter to exit")
 			fmt.Scanln()
 			break
