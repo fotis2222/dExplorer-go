@@ -39,7 +39,7 @@ func main() {
 			fmt.Scanln()
 			break
 		}
-		if player.hp <= 0 {
+		if player.hp >= 0 {
 			fmt.Println("You have lost the game, press Enter to exit")
 			fmt.Scanln()
 			break
