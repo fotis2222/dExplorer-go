@@ -7,6 +7,7 @@ import (
 
 type Player struct {
 	hp int
+	xp int
 }
 
 func (p *Player) Attack(enemyHP int) {
@@ -22,6 +23,7 @@ func (p *Player) Heal(amount int) {
 func main() {
 	player := Player{
 		hp: 100,
+		xp: 0,
 	}
 
 	fmt.Println("Welcome to the dungeon of Supremium!")
@@ -47,6 +49,7 @@ func main() {
 				fmt.Scanln(&option)
 				if option == "1" {
 					player.Attack(5)
+					player.xp += 5
 					fmt.Printf("You now have %d hp\n", player.hp)
 					fmt.Println("Press enter to continue")
 					fmt.Scanln()
@@ -67,6 +70,7 @@ func main() {
 				if option == "1" {
 					player.Heal(5)
 					fmt.Printf("You now have %d hp\n", player.hp)
+					fmt.Printf("You now have %d xp\n", player.xp)
 					fmt.Println("Press enter to continue")
 					fmt.Scanln()
 				} else if option == "2" {
@@ -77,7 +81,7 @@ func main() {
 					fmt.Println("Press enter to continue")
 					fmt.Scanln()
 				}
-			} else if see == 4 {
+			} else if see == 3 {
 				fmt.Println("You see a snake!\nOptions:")
 				fmt.Println("(1) Attack")
 				fmt.Println("(2) Dodge")
@@ -85,7 +89,9 @@ func main() {
 				fmt.Scanln(&option)
 				if option == "1" {
 					player.Attack(10)
+					player.xp += 10
 					fmt.Printf("You now have %d hp\n", player.hp)
+					fmt.Printf("You now have %d xp\n", player.xp)
 					fmt.Println("Press enter to continue")
 					fmt.Scanln()
 				} else if option == "2" {
