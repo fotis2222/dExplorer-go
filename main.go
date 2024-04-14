@@ -162,7 +162,7 @@ func main() {
 					fmt.Scanln()
 				}
 			} else if see == 7 {
-				fmt.Println("You found a super potion!\nOptions:")
+				fmt.Println("You found a shiny super potion!\nOptions:")
 				fmt.Println("(1) Drink")
 				fmt.Println("(2) Pass")
 				fmt.Print("Option >> ")
@@ -180,6 +180,12 @@ func main() {
 					fmt.Println("Press enter to continue")
 					fmt.Scanln()
 				}
+			} else if see == 8 {
+				fmt.Println("You see an old man!")
+				player.xp += 30
+				fmt.Printf("You now have %d xp\n", player.xp)
+				fmt.Println("Press enter to continue")
+				fmt.Scanln()
 			}
 		}
 	}
