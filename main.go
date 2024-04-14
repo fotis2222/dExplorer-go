@@ -32,7 +32,7 @@ func main() {
 	var see int
 	var option string
 	for {
-		see = rand.Intn(6)
+		see = rand.Intn(10)
 		if player.hp <= 0 {
 			fmt.Println("You have lost the game, press Enter to exit")
 			fmt.Scanln()
@@ -183,6 +183,12 @@ func main() {
 			} else if see == 8 {
 				fmt.Println("You see an old man!")
 				player.xp += 30
+				fmt.Printf("You now have %d xp\n", player.xp)
+				fmt.Println("Press enter to continue")
+				fmt.Scanln()
+			} else if see == 9 {
+				fmt.Println("You see a super old man!")
+				player.xp += 50
 				fmt.Printf("You now have %d xp\n", player.xp)
 				fmt.Println("Press enter to continue")
 				fmt.Scanln()
